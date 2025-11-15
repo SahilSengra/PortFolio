@@ -1,177 +1,284 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio Website HTML CSS </title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <!-- Move to up button -->
-    <div class="scroll-button">
-      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Sengra | Developer & Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
-    <!-- navgaition menu -->
-    <nav>
-      <div class="navbar">
-        <div class="logo"><a href="#">Portfolio.</a></div>
-        <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <div class="cancel-btn">
-            <i class="fas fa-times"></i>
-          </div>
-        </ul>
-        <div class="media-icons">
-          <a href="https://www.facebook.com/sahilsengra.sahil"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/_insta_.shoot_/"><i class="fab fa-instagram"></i></a>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
-      <div class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
     </nav>
 
-    <!-- Home Section Start -->
-    <section class="home" id="home">
-      <div class="home-content">
-        <div class="text">
-          <div class="text-one">Hello,</div>
-          <div class="text-two">I'm Sahil Sengra</div>
-          <div class="text-three">Full Stack Developer</div>
-          <div class="text-four">From Bihar/ Currently in Kolkata</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glitch" data-text="SAHIL SENGRA">SAHIL SENGRA</h1>
+                <p class="hero-subtitle">Developer | Trainer | Tech Enthusiast</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-circle"></div>
+                </div>
+            </div>
         </div>
-        <div class="button">
-          <button>Open to relocate</button>
-        </div>
-      </div>
     </section>
 
-    <!-- About Section Start -->
-    <section class="about" id="about">
-      <div class="content">
-        <div class="title"><span>About Me</span></div>
-        <div class="about-details">
-          <div class="left">
-            <img src="about_mme.jpg" alt="" />
-          </div>
-          <div class="right">
-            <div class="topic">Designing Is My Passion</div>
-            <p class="about_me">
-              Designing is more than just a hobby for me; it’s a passion that drives my creativity and innovation across various disciplines. My expertise in <strong>web development, graphic design, and Python programming</strong> allows me to create comprehensive and impactful digital experiences.
-
-              Combining these three areas, I craft websites that are not only visually appealing but also highly functional. Web development serves as the backbone, where I design intuitive, responsive, and user-friendly interfaces. <strong>Graphic design</strong> enhances these interfaces with compelling visuals that captivate users and convey messages effectively through the artful use of color, typography, and imagery.<br>
-
-              <strong>Python programming</strong> ties everything together by adding a layer of functionality and efficiency. With Python, I can automate repetitive tasks, develop dynamic web applications, and create interactive prototypes. This integration ensures that my designs are not only aesthetically pleasing but also robust and adaptable to various user needs.<br>
-
-              In summary, my passion for designing is a holistic approach that blends web development, graphic design, and Python programming. This synergy enables me to push creative boundaries and deliver innovative digital solutions that are both beautiful and practical.
-            </p>
-            <div class="button">
-              <button><a href="https://drive.google.com/file/d/1S2zx4rJuNm67WvdVkp2RSE4lWO9pd-aO/view?usp=sharing">Download Resume</a></button>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi! I'm Sahil Sengra, a passionate developer and coding trainer with a B.Tech degree from the University of Engineering and Management. Currently working at Infinity Learn, I specialize in teaching coding, robotics, and IoT to aspiring students.</p>
+                    <p>With expertise in web development, machine learning, and UI/UX design, I create innovative solutions that bridge technology and education. My mission is to inspire the next generation of tech enthusiasts through hands-on learning experiences.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Education</h3>
+                    <div class="edu-item">
+                        <h4>B.Tech</h4>
+                        <p>University of Engineering and Management</p>
+                        <span>2020-2024 | CGPA: 8.6</span>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Class XII</h4>
+                        <p>DAV Public School (CBSE)</p>
+                        <span>2019-2020 | 69.33%</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- My Skill Section Start -->
-    <!-- Section Tag and Other Div will same where we need to put same CSS -->
-    <section class="skills" id="skills">
-      <div class="content">
-        <div class="title"><span>My Skills</span></div>
-        <div class="skills-details">
-          <div class="text">
-            <div class="topic">Skills Reflects Our Knowledge</div>
-            <p>"With skills spanning web development, graphic design, and Python programming, my portfolio reflects years of acquired knowledge. Explore visually stunning websites, captivating visuals, and efficient code solutions - a testament to my expertise in merging creativity with technical mastery."</p>
-            <div class="experience">
-              <div class="num">1</div>
-              <div class="exp">
-                Years Of <br />
-                Experience
-              </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend & Tools</h3>
+                    <div class="skill-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>SQL</span>
+                        <span>C</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Design & Analysis</h3>
+                    <div class="skill-tags">
+                        <span>UI/UX Design</span>
+                        <span>Data Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3>IoT & Embedded</h3>
+                    <div class="skill-tags">
+                        <span>IoT</span>
+                        <span>Arduino</span>
+                        <span>Block Programming</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="boxes">
-            <div class="box">
-              <div class="topic">HTML+CSS</div>
-              <div class="per">90%</div>
-            </div>
-            <div class="box">
-              <div class="topic">JavaScript</div>
-              <div class="per">75%</div>
-            </div>
-            <div class="box">
-              <div class="topic">Graphic Design</div>
-              <div class="per">97%</div>
-            </div>
-            <div class="box">
-              <div class="topic">Python</div>
-              <div class="per">80%</div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- My Services Section Start -->
-    <section class="services" id="services">
-      <div class="content">
-        <div class="title"><span>My Services</span></div>
-        <div class="boxes">
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-desktop"></i>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Driver Drowsiness Detection</h3>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Driver Drowsiness Detection System</h3>
+                        <p>An AI-powered system that monitors driver alertness using computer vision and machine learning to analyze facial features and prevent accidents.</p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>Dlib</span>
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h3>Weather Forecasting</h3>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Weather Forecasting Website</h3>
+                        <p>A responsive web application providing real-time weather updates with geolocation support and a modern, elegant user interface.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>OpenWeather API</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="topic">Web Devlopment</div>
-            <p>Creating responsive, user-friendly websites with intuitive designs.</p>
-          </div>
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <div class="topic">Graphic Design</div>
-            <p>Crafting compelling visuals to enhance brand identity and user engagement.</p>
-          </div>
-          <div class="box">
-            <div class="icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="topic">Python Development</div>
-            <p>Building dynamic applications and automating processes for efficient digital solutions.</p>
-          </div>
-          
         </div>
-      </div>
     </section>
 
-    <!-- Contact Me section Start -->
-    <section class="contact" id="contact">
-      <div class="content">
-        <div class="title"><span>Contact Me</span></div>
-        <div class="text">
-          <div class="topic">Have Any Project?</div>
-          <p>Email: sahilsengra4545@gmail.com<br>Mobile : +91 9199009705</p>
-          <div class="button">
-            <button><a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/">Let's Chat</a></button>
-          </div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Coding and Robotics Trainer</h3>
+                        <h4>Infinity Learn</h4>
+                        <span class="date">July 2025 - Present</span>
+                        <ul>
+                            <li>Teaching HTML, CSS, JavaScript, Python, and Data Analysis</li>
+                            <li>Guiding students in C with Arduino UNO and Block-Based IoT</li>
+                            <li>Conducting practical and interactive coding sessions</li>
+                            <li>Working under collaboration with Wizklub</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>TCS iON Remote Internship</h3>
+                        <h4>Tata Consultancy Services</h4>
+                        <span class="date">Dec 2022 - Jan 2023</span>
+                        <ul>
+                            <li>Worked on web-based projects</li>
+                            <li>Enhanced UI design and front-end functionalities</li>
+                            <li>Developed scalable web applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Footer Section Start -->
-    <footer>
-      <div class="text">
-        <span>Created By <a href="#">SahilSengra</a></span>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>sahilsengra@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91-9199009705</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Ganesh Nagar, Wagholi, Pune, Maharashtra, 412207</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Connect With Me</h3>
+                    <div class="social-connect">
+                        <a href="https://www.facebook.com/sahilsengra.sahil" target="_blank" class="social-btn facebook">
+                            <span class="social-icon">📘</span>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://github.com/SahilSengra" target="_blank" class="social-btn github">
+                            <span class="social-icon">💻</span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/_insta_.shoot_" target="_blank" class="social-btn instagram">
+                            <span class="social-icon">📸</span>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="Sahil_Sengra.pdf" download="Sahil_Sengra_Resume.pdf" class="social-btn resume">
+                            <span class="social-icon">📄</span>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sahil Sengra. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
