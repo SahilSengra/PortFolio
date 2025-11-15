@@ -2,6 +2,22 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
+const heroSection = document.querySelector('.hero');
+const aboutSection = document.querySelector('#about');
+
+if (heroSection && aboutSection) {
+    const hideHeroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heroSection.classList.add('hide');     // hide home
+            } else {
+                heroSection.classList.remove('hide');  // show home
+            }
+        });
+    }, { threshold: 0.3 });
+
+    hideHeroObserver.observe(aboutSection);
+}
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -109,22 +125,24 @@ animateOnScroll.forEach(el => {
 
 // Typing Effect for Hero Subtitle
 const subtitle = document.querySelector('.hero-subtitle');
-const text = subtitle.textContent;
-subtitle.textContent = '';
+if (subtitle) {
+    const text = subtitle.textContent;
+    subtitle.textContent = '';
 
-let i = 0;
-function typeWriter() {
-    if (i < text.length) {
-        subtitle.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 100);
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
     }
-}
 
-// Start typing effect when page loads
-window.addEventListener('load', () => {
-    setTimeout(typeWriter, 500);
-});
+    // Start typing effect when page loads
+    window.addEventListener('load', () => {
+        setTimeout(typeWriter, 500);
+    });
+}
 
 // Social Button Hover Effects
 const socialButtons = document.querySelectorAll('.social-btn');
