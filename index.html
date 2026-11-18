@@ -1,291 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Sengra | Developer & Trainer</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Sahil Sengra – Technology & Innovation</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04050b;--mid:#0a1030;--tx:#eef1ff;--mu:#8f9bc4;--a:#4d7cff;--b:#9b5cff;--c:#2de2e6;--gl:rgba(255,255,255,.045);--bd:rgba(255,255,255,.1);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font:400 17px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.sora{font-family:Sora,system-ui,sans-serif;letter-spacing:-.03em}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(1000px 600px at 50% 120%,var(--mid),transparent)}
+.bg i{position:absolute;border-radius:50%;filter:blur(110px);opacity:.5;animation:fl 18s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:46vw;height:46vw;background:#2338c8;top:-12vw;left:-8vw}.bg i:nth-child(2){width:38vw;height:38vw;background:#6a2ccf;top:20vh;right:-10vw;animation-delay:-6s}.bg i:nth-child(3){width:30vw;height:30vw;background:#0a7f9c;bottom:-10vw;left:25vw;animation-delay:-11s;opacity:.3}
+@keyframes fl{to{transform:translate(6vw,5vh) scale(1.15)}}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b),var(--c));z-index:60}
+#ld{position:fixed;inset:0;z-index:70;background:var(--bg);display:grid;place-items:center;font:800 clamp(30px,6vw,60px) Sora;transition:opacity .8s,visibility .8s}
+#ld span{background:linear-gradient(90deg,#fff,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;animation:pu 1s ease-in-out infinite alternate}@keyframes pu{from{opacity:.3}}
+#ld.x{opacity:0;visibility:hidden}
+#cur{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:-1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(77,124,255,.16),transparent 65%)}
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:2px;padding:6px;border:1px solid var(--bd);border-radius:99px;background:rgba(10,14,34,.6);backdrop-filter:blur(18px);max-width:96vw;overflow-x:auto}
+nav a{color:var(--mu);text-decoration:none;padding:7px 15px;border-radius:99px;font-size:14px;font-weight:600;white-space:nowrap;transition:.2s}nav a:hover,nav a:focus-visible,nav a.on{color:#fff;background:rgba(255,255,255,.09);outline:none}
+.w{max-width:1200px;margin:auto;padding:0 6vw}
+#hero{min-height:100vh;display:grid;grid-template-columns:1.25fr 1fr;gap:5vw;align-items:center;padding-top:110px;padding-bottom:50px}
+.pill{display:inline-flex;gap:10px;align-items:center;padding:7px 16px;border:1px solid var(--bd);border-radius:99px;background:var(--gl);font-size:14px;color:var(--mu)}
+.pill:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+h1{font-size:clamp(58px,10.5vw,148px);font-weight:800;line-height:.9;margin:26px 0 22px}
+h1 span{display:block;overflow:hidden;padding-bottom:.08em}h1 em{display:block;font-style:normal;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span:nth-child(2) em{animation-delay:.15s;background:linear-gradient(100deg,var(--a),var(--b) 60%,var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes up{to{transform:none}}
+.role{font:500 clamp(19px,2.2vw,28px)/1.3 Sora;color:#fff}.mu{color:var(--mu)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:15px 26px;border-radius:99px;border:1px solid var(--bd);background:var(--gl);color:var(--tx);font:600 15px Manrope;text-decoration:none;cursor:pointer;transition:box-shadow .25s,transform .2s;backdrop-filter:blur(10px)}
+.btn.p{background:linear-gradient(110deg,var(--a),var(--b));border:0;box-shadow:0 8px 40px rgba(77,124,255,.4)}.btn:hover,.btn:focus-visible{box-shadow:0 8px 50px rgba(155,92,255,.55);outline:none}
+.photo{position:relative;justify-self:center;width:min(100%,400px)}
+.photo:before{content:"";position:absolute;inset:-3px;border-radius:200px 200px 28px 28px;background:conic-gradient(from var(--r,0deg),var(--a),var(--b),var(--c),var(--a));animation:sp 8s linear infinite;filter:blur(1px)}
+@property --r{syntax:"<angle>";inherits:false;initial-value:0deg}@keyframes sp{to{--r:360deg}}
+.pic{position:relative;aspect-ratio:4/5;border-radius:197px 197px 25px 25px;background:linear-gradient(170deg,#101a4a,#1c0f3d);overflow:hidden;display:grid;place-items:center;text-align:center;color:var(--mu);cursor:pointer;font-size:15px;padding:20px}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.pic b{display:block;color:#fff;font:600 17px Sora;margin-top:8px}
+.photo .tag{position:absolute;left:-6%;bottom:12%;z-index:2;padding:12px 18px;border-radius:16px;background:rgba(10,14,34,.7);border:1px solid var(--bd);backdrop-filter:blur(14px);font-size:14px;line-height:1.35}.tag b{display:block;font:800 26px Sora;color:var(--a)}
+.mq{overflow:hidden;border-block:1px solid var(--bd);padding:18px 0;background:rgba(255,255,255,.02)}
+.mq div{display:flex;gap:46px;width:max-content;animation:mq 38s linear infinite;font:700 clamp(22px,3vw,36px) Sora;color:transparent;-webkit-text-stroke:1px rgba(160,175,255,.55);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:130px 0 20px}
+h2{font-size:clamp(38px,6vw,78px);font-weight:800;line-height:1;margin-bottom:40px}
+.big{font:500 clamp(24px,3.4vw,44px)/1.3 Sora;letter-spacing:-.025em;max-width:1000px}.big span{opacity:.2;transition:opacity .3s}.big span.l{opacity:1}
+.stats{display:flex;gap:7vw;flex-wrap:wrap;margin:56px 0 30px}.stats b{display:block;font:800 clamp(56px,8vw,110px)/1 Sora;background:linear-gradient(120deg,#fff,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.gc{position:relative;padding:30px;border-radius:26px;border:1px solid var(--bd);background:var(--gl);backdrop-filter:blur(14px);overflow:hidden}
+.gc:before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0),rgba(110,140,255,.2),transparent 60%);opacity:0;transition:opacity .3s}.gc:hover:before{opacity:1}
+.gc>*{position:relative}.gc h3{font-size:22px;margin-bottom:18px}
+.s2{grid-column:span 2}.s3{grid-column:span 3}.s4{grid-column:span 4}
+.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{padding:8px 16px;border-radius:99px;border:1px solid var(--bd);background:rgba(255,255,255,.04);font-size:15px;font-weight:600;transition:.2s}.chip:hover{border-color:var(--a);color:#fff;background:rgba(77,124,255,.18);transform:translateY(-2px)}
+.rl{position:relative;padding-left:5vw}.rl:before,.rl i{content:"";position:absolute;left:0;top:8px;bottom:0;width:2px;background:var(--bd)}.rl i{height:var(--h,0);bottom:auto;background:linear-gradient(var(--a),var(--b));box-shadow:0 0 14px var(--a)}
+.job{position:relative;margin-bottom:34px}.job:before{content:"";position:absolute;left:calc(-5vw - 6px);top:34px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--b);box-shadow:0 0 16px var(--b)}
+.job h3{font-size:clamp(24px,3vw,34px);line-height:1.15}.job .per{color:var(--c);font:600 15px Sora;margin:8px 0 4px}.job ul{padding-left:20px;margin-top:16px;color:#cdd4f2}.job li{margin:6px 0}
+.pj{display:grid;grid-template-columns:1fr 1.1fr;gap:0;padding:0;margin-bottom:26px;transition:transform .25s}.pj:hover{transform:translateY(-4px)}
+.vis{min-height:340px;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#16246a,#070b22);border-right:1px solid var(--bd)}.vis svg{width:80%;max-width:340px;height:auto}
+.pj .tx{padding:38px}.pj h3{font-size:clamp(24px,3vw,34px);line-height:1.15;margin-bottom:12px}.pj p{color:#cdd4f2;margin-bottom:20px}
+.ed{display:grid;grid-template-columns:1fr 2fr;gap:5vw;padding:34px 0;border-bottom:1px solid var(--bd);align-items:center}.ed:first-of-type{border-top:1px solid var(--bd)}
+.ed .n{font:800 clamp(48px,7vw,96px)/1 Sora;background:linear-gradient(120deg,#fff,var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ed h3{font-size:clamp(22px,2.6vw,32px)}
+.cta{font:800 clamp(40px,8vw,112px)/1 Sora;letter-spacing:-.04em;margin-bottom:34px}.cta a{color:var(--tx);text-decoration:none;background:linear-gradient(100deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;word-break:break-all}
+form{display:grid;gap:12px;max-width:560px;margin-top:26px}input,textarea{width:100%;padding:15px 18px;border-radius:16px;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--tx);font:inherit;backdrop-filter:blur(10px)}
+input:focus,textarea:focus{outline:2px solid var(--a)}footer{padding:80px 0 50px;color:var(--mu);font-size:14px}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+.ey{transform-origin:50% 50%;animation:bl 4.5s infinite}@keyframes bl{0%,42%,50%,100%{transform:scaleY(1)}46%{transform:scaleY(.08)}}
+.sc{animation:scan 3s ease-in-out infinite alternate}@keyframes scan{from{transform:translateY(0)}to{transform:translateY(150px)}}
+.al{animation:al 4.5s infinite;opacity:0}@keyframes al{0%,44%{opacity:0}48%,60%{opacity:1}66%,100%{opacity:0}}
+.sn{transform-origin:70px 70px;animation:sp2 24s linear infinite}@keyframes sp2{to{transform:rotate(360deg)}}
+@media(max-width:860px){#hero{grid-template-columns:1fr;padding-top:100px}.photo{width:min(78%,340px)}.pj,.ed{grid-template-columns:1fr;gap:10px}.vis{border-right:0;border-bottom:1px solid var(--bd);min-height:260px}.bento>*{grid-column:span 6!important}.pj .tx{padding:26px}.rl{padding-left:34px}.job:before{left:-40px}#cur{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 em{transform:none}.rv{opacity:1;transform:none}.big span{opacity:1}}
+@media print{nav,#ld,#cur,form,.btns{display:none}body{background:#fff;color:#000}.bg{display:none}}
+</style></head><body>
+<div id="ld"><span>Sahil Sengra</span></div><div id="pg"></div><div class="bg"><i></i><i></i><i></i></div><div id="cur"></div>
+<nav aria-label="Main"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#exp">Experience</a><a href="#projects">Projects</a><a href="#edu">Education</a><a href="#contact">Contact</a></nav>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Portfolio</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<main>
+<div class="w" id="home"><div id="hero"><div>
+<span class="pill">Learning Links Foundation · Kolkata, India</span>
+<h1><span><em>Sahil</em></span><span><em>Sengra</em></span></h1>
+<p class="role">Assistant Manager – Technology &amp; Innovation</p>
+<p class="mu" style="margin-top:8px">EdTech | STEM Education | Robotics | IoT | Python | Artificial Intelligence</p>
+<div class="btns"><a class="btn p mg" href="#projects">Explore my work</a><button class="btn mg" onclick="window.print()">Download my resume</button><a class="btn mg" href="#contact">Contact me</a></div></div>
+<div class="photo"><label class="pic" id="pic" tabindex="0"><span id="pt">Add your portrait<b>Click to choose a photo</b></span><input type="file" id="pf" accept="image/*" hidden></label>
+<div class="tag"><b>1,200+</b>students trained</div></div></div></div>
+<div class="mq" aria-hidden="true"><div><span>Python</span><span>Artificial Intelligence</span><span>Robotics</span><span>IoT</span><span>Arduino</span><span>EdTech</span><span>STEM Education</span><span>Machine Learning</span><span>Python</span><span>Artificial Intelligence</span><span>Robotics</span><span>IoT</span><span>Arduino</span><span>EdTech</span><span>STEM Education</span><span>Machine Learning</span></div></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-image">
-                <div class="avatar-container">
-                    <div class="avatar-frame-outer"></div>
-                    <div class="avatar-frame-inner"></div>
-                    <div class="corner-tl"></div>
-                    <div class="corner-tr"></div>
-                    <div class="corner-bl"></div>
-                    <div class="corner-br"></div>
-                    <img src="sahil-photo.jpg" alt="Sahil Sengra" class="avatar-photo">
-                    <div class="scan-line"></div>
-                </div>
-            </div>
-            <div class="hero-text">
-                <h1 class="glitch" data-text="SAHIL SENGRA">SAHIL SENGRA</h1>
-                <p class="hero-subtitle">Developer | Trainer | Tech Enthusiast</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Work</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="w"><section id="about"><h2 class="rv">About</h2>
+<p class="big" id="big">Assistant Manager – Technology &amp; Innovation with experience in EdTech, STEM education, robotics and IoT, leading technology programs across schools. I lead and manage a team, plan and deliver projects, set up robotics and IoT labs, and manage stakeholder communication, planning and reporting.</p>
+<div class="stats rv"><div><b data-n="1200">0</b>students trained</div><div><b data-n="100">0</b>project showcases guided</div></div>
+<p class="mu rv" style="max-width:760px">Bachelor of Technology graduate with hands-on skills in Python, AI tools, Arduino and IoT. Aiming to grow into a Manager and then Head of Technology &amp; Innovation in EdTech.</p></section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hi! I'm Sahil Sengra, a passionate developer and coding trainer with a B.Tech degree from the University of Engineering and Management. Currently working at Infinity Learn, I specialize in teaching coding, robotics, and IoT to aspiring students.</p>
-                    <p>With expertise in web development, machine learning, and UI/UX design, I create innovative solutions that bridge technology and education. My mission is to inspire the next generation of tech enthusiasts through hands-on learning experiences.</p>
-                </div>
-                <div class="education-card">
-                    <h3>Education</h3>
-                    <div class="edu-item">
-                        <h4>B.Tech</h4>
-                        <p>University of Engineering and Management</p>
-                        <span>2020-2024 | CGPA: 8.6</span>
-                    </div>
-                    <div class="edu-item">
-                        <h4>Class XII</h4>
-                        <p>DAV Public School (CBSE)</p>
-                        <span>2019-2020 | 69.33%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="skills"><h2 class="rv">Skills</h2><div class="bento rv">
+<div class="gc s2"><h3>Leadership</h3><div class="chips"><span class="chip">Team Leadership</span><span class="chip">Project Management</span><span class="chip">Stakeholder Management</span><span class="chip">Program Planning</span><span class="chip">Task Delegation</span></div></div>
+<div class="gc s4"><h3>Technical</h3><div class="chips"><span class="chip">Python</span><span class="chip">Artificial Intelligence</span><span class="chip">Data Analysis</span><span class="chip">Machine Learning</span><span class="chip">SQL</span><span class="chip">Arduino</span><span class="chip">C Programming and Embedded Systems</span><span class="chip">Block Based Programming</span></div></div>
+<div class="gc s3"><h3>Domain</h3><div class="chips"><span class="chip">EdTech</span><span class="chip">STEM Education</span><span class="chip">Robotics</span><span class="chip">IoT</span><span class="chip">Lab Setup and Management</span><span class="chip">Training and Development</span></div></div>
+<div class="gc s3"><h3>Web Development</h3><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Django</span><span class="chip">Bootstrap</span><span class="chip">Frontend Development</span><span class="chip">UI/UX Design</span></div></div></div></section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Frontend Development</h3>
-                    <div class="skill-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>React</span>
-                        <span>Bootstrap</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend & Tools</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Django</span>
-                        <span>SQL</span>
-                        <span>C</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Design & Analysis</h3>
-                    <div class="skill-tags">
-                        <span>UI/UX Design</span>
-                        <span>Data Analysis</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h3>IoT & Embedded</h3>
-                    <div class="skill-tags">
-                        <span>IoT</span>
-                        <span>Arduino</span>
-                        <span>Block Programming</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="exp"><h2 class="rv">Experience</h2><div class="rl" id="rl"><i></i>
+<div class="job gc rv"><h3>Assistant Manager – Technology &amp; Innovation</h3><p class="per">Learning Links Foundation · Oct 2026 – Present</p><ul><li>Lead technology, STEM and robotics programs across schools while continuing to teach.</li><li>Lead and manage a team: assign tasks, track progress and ensure on-time delivery.</li><li>Plan and execute projects; set up and manage robotics and IoT labs.</li><li>Coordinate with school stakeholders on planning, timelines and reporting.</li></ul></div>
+<div class="job gc rv"><h3>Coding and Robotics Trainer</h3><p class="per">Infinity Learn (Wizklub collaboration program) · 28 Jul 2025 – Oct 2026</p><ul><li>Trained 1,200+ students through practical, hands-on classroom sessions in coding, robotics and IoT.</li><li>Guided 100+ student project showcases in coding, robotics and IoT.</li><li>Used AI tools to support teaching and student projects.</li></ul><p class="mu" style="font-size:14px;margin-top:14px">Skills used: Python, HTML, CSS, JavaScript, Data Analysis, C Programming, Arduino UNO, Block-Based IoT, Robotics, AI Tools</p></div></div></section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>Driver Drowsiness Detection</h3>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Driver Drowsiness Detection System</h3>
-                        <p>An AI-powered system that monitors driver alertness using computer vision and machine learning to analyze facial features and prevent accidents.</p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>OpenCV</span>
-                            <span>Dlib</span>
-                            <span>NumPy</span>
-                            <span>Pandas</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <h3>Weather Forecasting</h3>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Weather Forecasting Website</h3>
-                        <p>A responsive web application providing real-time weather updates with geolocation support and a modern, elegant user interface.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>OpenWeather API</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="projects"><h2 class="rv">Projects</h2>
+<article class="gc pj rv"><div class="vis"><svg viewBox="0 0 200 200" aria-label="Face with eye tracking and drowsiness alert"><ellipse cx="100" cy="100" rx="60" ry="80" fill="none" stroke="#4d7cff" stroke-width="1.5" stroke-dasharray="4 5"/>
+<g fill="#2de2e6"><circle cx="58" cy="84" r="2"/><circle cx="142" cy="84" r="2"/><circle cx="64" cy="140" r="2"/><circle cx="136" cy="140" r="2"/><circle cx="100" cy="176" r="2"/><circle cx="100" cy="30" r="2"/><circle cx="100" cy="112" r="2"/></g>
+<g class="ey" style="transform-box:fill-box"><ellipse cx="76" cy="86" rx="15" ry="8" fill="none" stroke="#fff" stroke-width="2"/><circle cx="76" cy="86" r="4" fill="#9b5cff"/></g><g class="ey" style="transform-box:fill-box"><ellipse cx="124" cy="86" rx="15" ry="8" fill="none" stroke="#fff" stroke-width="2"/><circle cx="124" cy="86" r="4" fill="#9b5cff"/></g>
+<path d="M82 140q18 8 36 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect class="sc" x="38" y="20" width="124" height="2" fill="#2de2e6" opacity=".8"/>
+<g class="al"><rect x="52" y="4" width="96" height="22" rx="11" fill="#ff4d6d"/><text x="100" y="19" text-anchor="middle" font-family="Sora" font-weight="700" font-size="11" fill="#fff">Fatigue warning</text></g></svg></div>
+<div class="tx"><h3>Driver Drowsiness Detection System</h3><p>Computer vision and machine learning system that analyses facial features, eye blinking and head movement to detect driver fatigue and trigger a warning.</p><div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">Dlib</span><span class="chip">NumPy</span><span class="chip">Pandas</span></div></div></article>
+<article class="gc pj rv"><div class="vis"><svg viewBox="0 0 200 200" aria-label="Weather forecast illustration"><g class="sn"><circle cx="70" cy="70" r="22" fill="#f2b233"/><g stroke="#f2b233" stroke-width="3" stroke-linecap="round"><path d="M70 30v-10M70 110v10M30 70H20M110 70h10M42 42l-7-7M98 98l7 7M98 42l7-7M42 98l-7 7"/></g></g>
+<path d="M90 100h70a20 20 0 0 0 0-40 28 28 0 0 0-54 8 16 16 0 0 0-16 32Z" fill="#cdd8ff" opacity=".92"/>
+<g fill="rgba(255,255,255,.08)" stroke="#4d7cff"><rect x="20" y="130" width="50" height="56" rx="12"/><rect x="75" y="130" width="50" height="56" rx="12"/><rect x="130" y="130" width="50" height="56" rx="12"/></g>
+<g fill="#fff" font-family="Sora" font-size="9" text-anchor="middle"><text x="45" y="162">Day 1</text><text x="100" y="162">Day 2</text><text x="155" y="162">Day 3</text></g></svg></div>
+<div class="tx"><h3>Weather Forecasting Website</h3><p>Responsive website showing real-time weather and a 3-day forecast using geolocation.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Open Weather API</span></div></div></article></section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Coding and Robotics Trainer</h3>
-                        <h4>Infinity Learn</h4>
-                        <span class="date">July 2025 - Present</span>
-                        <ul>
-                            <li>Teaching HTML, CSS, JavaScript, Python, and Data Analysis</li>
-                            <li>Guiding students in C with Arduino UNO and Block-Based IoT</li>
-                            <li>Conducting practical and interactive coding sessions</li>
-                            <li>Working under collaboration with Wizklub</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>TCS iON Remote Internship</h3>
-                        <h4>Tata Consultancy Services</h4>
-                        <span class="date">Dec 2022 - Jan 2023</span>
-                        <ul>
-                            <li>Worked on web-based projects</li>
-                            <li>Enhanced UI design and front-end functionalities</li>
-                            <li>Developed scalable web applications</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="edu"><h2 class="rv">Education</h2>
+<div class="ed rv"><div class="n">8.6</div><div><h3>Bachelor of Technology (B.Tech)</h3><p class="mu">University of Engineering and Management · 2020–24 · CGPA 8.6</p></div></div>
+<div class="ed rv"><div class="n">69.33%</div><div><h3>Class XII</h3><p class="mu">DAV Public School (CBSE) · 2019–20</p></div></div>
+<div class="ed rv"><div class="n">73.4%</div><div><h3>Class X</h3><p class="mu">P.P.M School (CBSE) · 2017–18</p></div></div></section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>sahilsengra@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91-9199009705</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Ganesh Nagar, Wagholi, Pune, Maharashtra, 412207</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/" target="_blank">Connect with me</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Connect With Me</h3>
-                    <div class="social-connect">
-                        <a href="https://www.facebook.com/sahilsengra.sahil" target="_blank" class="social-btn facebook">
-                            <span class="social-icon">📘</span>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://github.com/SahilSengra" target="_blank" class="social-btn github">
-                            <span class="social-icon">💻</span>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.instagram.com/_insta_.shoot_" target="_blank" class="social-btn instagram">
-                            <span class="social-icon">📸</span>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="Sahil_Sengra.pdf" download="Sahil_Sengra_Resume.pdf" class="social-btn resume">
-                            <span class="social-icon">📄</span>
-                            <span>Download Resume</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Sahil Sengra. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/sahil-sengra-8257b5242/" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
+<section id="contact"><p class="cta rv">Let’s talk.<br><a href="mailto:sahilsengra@gmail.com">sahilsengra@gmail.com</a></p>
+<p class="mu rv">+91-9199009705 · Kolkata, West Bengal, India</p>
+<div class="btns rv"><a class="btn p mg" href="mailto:sahilsengra@gmail.com">Email me</a><a class="btn mg" href="https://linkedin.com/in/sahil-sengra-8257b5242" target="_blank" rel="noopener">LinkedIn</a><button class="btn mg" onclick="window.print()">Resume</button></div>
+<form id="cf" class="rv"><input id="n" placeholder="Your name" aria-label="Your name" required><input id="e" type="email" placeholder="Your email" aria-label="Your email" required><textarea id="m" rows="4" placeholder="Your message" aria-label="Your message" required></textarea><button class="btn p" type="submit">Send message</button><p class="mu" id="fs" aria-live="polite"></p></form></section>
+<footer>© Sahil Sengra</footer></div></main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+setTimeout(()=>$('#ld').classList.add('x'),1100);
+addEventListener('pointermove',e=>{const c=$('#cur');c.style.left=e.clientX+'px';c.style.top=e.clientY+'px'});
+$$('.gc').forEach(g=>g.addEventListener('pointermove',e=>{const r=g.getBoundingClientRect();g.style.setProperty('--mx',e.clientX-r.left+'px');g.style.setProperty('--my',e.clientY-r.top+'px')}));
+$$('.mg').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+const big=$('#big');big.innerHTML=big.textContent.split(' ').map(w=>`<span>${w}</span>`).join(' ');const ws=$$('#big span');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const b=e.target.querySelector('[data-n]');
+$$('[data-n]').forEach(n=>{if(!e.target.contains(n)||n.d)return;n.d=1;const t=+n.dataset.n,s=performance.now();(function f(x){const p=Math.min((x-s)/1600,1);n.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString()+'+';if(p<1)requestAnimationFrame(f)})(s)})}),{threshold:.2});
+$$('.rv').forEach(e=>io.observe(e));
+const links=$$('nav a'),secs=links.map(a=>$(a.getAttribute('href')));
+function sc(){const h=document.documentElement,y=scrollY;$('#pg').style.width=y/(h.scrollHeight-innerHeight)*100+'%';
+const r=big.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));ws.forEach((w,i)=>w.classList.toggle('l',i/ws.length<p*1.1));
+const rl=$('#rl'),q=rl.getBoundingClientRect();rl.style.setProperty('--h',Math.min(q.height,Math.max(0,innerHeight*.6-q.top))+'px');
+let k=0;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<innerHeight*.4)k=i});links.forEach((a,i)=>a.classList.toggle('on',i===k))}
+addEventListener('scroll',sc,{passive:true});sc();
+function show(u){const i=document.createElement('img');i.src=u;i.alt='Sahil Sengra';$('#pic').appendChild(i);$('#pt').style.display='none'}
+try{const s=localStorage.getItem('sahil-photo');if(s)show(s)}catch(e){}
+$('#pf').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),k=Math.min(1,800/im.width);c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);const u=c.toDataURL('image/jpeg',.85);$('#pic img')?.remove();show(u);try{localStorage.setItem('sahil-photo',u)}catch(e){}};im.src=URL.createObjectURL(f)};
+$('#pic').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#pf').click()}};
+$('#cf').onsubmit=e=>{e.preventDefault();location.href='mailto:sahilsengra@gmail.com?subject='+encodeURIComponent('Portfolio message from '+$('#n').value)+'&body='+encodeURIComponent($('#m').value+'\n\n'+$('#n').value+' ('+$('#e').value+')');$('#fs').textContent='Opening your email app to send the message.'};
+</script></body></html>
