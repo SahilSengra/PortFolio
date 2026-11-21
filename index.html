@@ -107,6 +107,44 @@ h2::after{content:"";display:block;width:64px;height:3px;margin-top:16px;backgro
 .ed.big{border-color:var(--ice);box-shadow:0 0 40px rgba(143,227,255,.1)}
 .ed b{font-family:Unbounded;font-size:30px;color:var(--amber);display:block;margin:8px 0}
 .ed small{color:var(--mute)}
+.ed b.t{font-size:17px;line-height:1.35;color:var(--ice);margin:10px 0}
+.sub{font-size:14px;color:var(--mute);margin-bottom:4px}.sub b{color:var(--text)}
+.bring{margin-top:20px}
+/* about list */
+.wb{font-size:15px;color:var(--ice);margin:22px 0 10px}
+ul.bring{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+ul.bring li{padding:12px 14px 12px 38px;border:1px solid var(--line);border-radius:12px;background:rgba(13,19,37,.7);position:relative;font-size:14.5px;color:#c5cce2}
+ul.bring li::before{content:"";position:absolute;left:14px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:3px;background:linear-gradient(135deg,var(--ice),var(--violet));box-shadow:0 0 10px var(--violet);transform:rotate(45deg)}
+/* education ledger */
+.ledger{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:170px 1fr auto;gap:28px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .3s,background .3s}
+.row::before{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--ice),var(--violet));transition:width .6s}
+.row:hover{padding-left:22px;background:linear-gradient(90deg,rgba(139,124,255,.1),transparent)}
+.row:hover::before{width:100%}
+.yr{font-family:Unbounded;font-weight:800;font-size:20px;color:transparent;-webkit-text-stroke:1px var(--ice);white-space:nowrap;transition:color .3s}
+.yr i{display:inline-block;width:14px;height:1px;background:var(--ice);margin:0 4px 6px;vertical-align:middle}
+.row:hover .yr{color:var(--ice)}
+.mid h3{font-size:18px;margin-bottom:4px}
+.mid span{color:var(--mute);font-size:14px}
+.res{text-align:right;display:flex;align-items:center;gap:14px;justify-content:flex-end}
+.res b{font-family:Unbounded;font-size:26px;color:var(--amber)}.res b small{font-size:12px;color:var(--mute);margin-left:4px}
+.res em{font-style:normal;font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,184,107,.4);color:var(--amber)}
+.hl .res svg{position:absolute;right:8px;opacity:.9}.hl .res b{position:relative;width:84px;text-align:center;line-height:1.1}.hl .res b small{display:block;margin:0}
+.trk{fill:none;stroke:var(--line);stroke-width:5}
+.arc{fill:none;stroke:url(#g);stroke:var(--ice);stroke-width:5;stroke-linecap:round;stroke-dasharray:var(--c,214);stroke-dashoffset:var(--c,214);transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1) .3s}
+.on .arc,.on.arc{stroke-dashoffset:calc(var(--c,214) * (1 - var(--p)))}
+.row .arc{--c:214}
+/* languages */
+.langs{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,6vw,80px)}
+.lg{position:relative;width:170px;text-align:center}
+.lg svg{width:150px;height:150px;display:block;margin:0 auto;filter:drop-shadow(0 0 12px rgba(143,227,255,.35))}
+.lg .arc{--c:327;stroke:var(--violet);animation:none}
+.lg:nth-child(2) .arc{stroke:var(--ice)}.lg:nth-child(3) .arc{stroke:var(--amber)}
+.glyph{position:absolute;left:0;right:0;top:48px;font-family:Unbounded,system-ui,sans-serif;font-size:30px;font-weight:600;line-height:1.1}
+.lg b{display:block;margin-top:14px;font-family:Unbounded;font-size:16px}
+.lg small{color:var(--mute)}
+.lg:hover svg{animation:spin 6s linear infinite}
+@media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.res{justify-content:flex-start}.hl .res{min-height:84px}.hl .res svg{right:auto;left:0}.hl .res b{margin-left:0;width:84px}ul.bring{grid-template-columns:1fr}}
 /* contact */
 .contact{text-align:center}
 .contact h2::after{margin-inline:auto}
@@ -155,8 +193,8 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
   <div class="stats">
     <div class="stat rv"><strong data-n="1200" data-s="+">0</strong><span>Students trained</span></div>
     <div class="stat rv"><strong data-n="100" data-s="+">0</strong><span>Project showcases guided</span></div>
-    <div class="stat rv"><strong data-n="6" data-s="">0</strong><span>Team members led</span></div>
-    <div class="stat rv"><strong data-n="2" data-s="">0</strong><span>Schools managed</span></div>
+    <div class="stat rv"><strong data-n="12" data-s="">0</strong><span>Team members led</span></div>
+    <div class="stat rv"><strong data-n="6" data-s="">0</strong><span>Schools handled</span></div>
   </div>
 </div>
 </header>
@@ -166,10 +204,17 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
   <h2 class="rv">About</h2>
   <div class="about rv">
     <div>
-      <p>I’m an Assistant Manager in Technology &amp; Innovation working in EdTech and STEM education. I lead a team, plan and deliver projects, set up robotics and IoT labs, and handle communication, planning and reporting with school stakeholders.</p>
-      <p>Before this I trained 1,200+ students and guided 100+ project showcases in coding, IoT and data analysis. I’m a B.Tech graduate with hands-on skills in Python, AI tools, Arduino and IoT.</p>
+      <p>Assistant Manager – Technology &amp; Innovation at Learning Links Foundation, leading technology, STEM and robotics programs in schools.</p>
+      <p>I plan and deliver projects, set up robotics and IoT labs, and work with school stakeholders on planning and reporting, while continuing to teach. I currently lead a team of 12 across 6 schools. Before this, I trained 1,200+ students and guided 100+ project showcases in coding, robotics, IoT and data analysis.</p>
+      <h3 class="wb">What I bring</h3>
+      <ul class="bring">
+        <li>Team leadership and project management</li>
+        <li>EdTech and STEM program delivery</li>
+        <li>Robotics, IoT and Arduino lab setup</li>
+        <li>Python, AI tools and data analysis</li>
+      </ul>
     </div>
-    <div class="goal"><small>Where I’m heading</small><b>Manager, then Head of Technology &amp; Innovation in EdTech.</b></div>
+    <div class="goal"><small>My goal</small><b>Manager, then Head of Technology &amp; Innovation.</b><p style="margin-top:14px;font-size:14px;color:var(--mute)">Building learning programs where technology and hands-on innovation come together. Open to connecting with educators, EdTech teams and innovation leaders.</p></div>
   </div>
 </section>
 
@@ -177,21 +222,25 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
   <h2 class="rv">Experience</h2>
   <div class="tl">
     <article class="job now rv">
-      <div class="when">Oct 2026 – Present</div>
+      <div class="when">Oct 2026 – Present · Full-time</div>
       <h3>Assistant Manager – Technology &amp; Innovation</h3>
-      <div class="org">Learning Links Foundation</div>
+      <div class="org">Learning Links Foundation · Kolkata, West Bengal · On-site</div>
       <ul>
         <li>Lead technology, STEM and robotics programs across schools while continuing to teach.</li>
         <li>Lead and manage a team: assign tasks, track progress and ensure on-time delivery.</li>
         <li>Plan and execute projects; set up and manage robotics and IoT labs.</li>
         <li>Coordinate with school stakeholders on planning, timelines and reporting.</li>
+        <li>Bring AI tools and Python into classroom programs and student projects.</li>
+        <li>Earlier track record: trained 1,200+ students and guided 100+ project showcases in coding, robotics and IoT.</li>
       </ul>
     </article>
     <article class="job rv">
-      <div class="when">28 Jul 2025 – Oct 2026</div>
-      <h3>Coding and Robotics Trainer</h3>
-      <div class="org">Infinity Learn · Wizklub collaboration program</div>
-      <ul>
+      <div class="when">Jul 2025 – Oct 2026 · 1 yr 3 mos</div>
+      <h3>Wizklub Futurz</h3>
+      <div class="org">Coding and Robotics Trainer · Pune, Maharashtra · On-site</div>
+      <div class="sub"><b>Full-time</b> · Aug 2026 – Oct 2026 · Pune Division</div>
+      <div class="sub"><b>Part-time</b> · Aug 2025 – Aug 2026 · Pune District</div>
+      <ul style="margin-top:12px">
         <li>Trained 1,200+ students through hands-on classroom sessions in coding, robotics and IoT.</li>
         <li>Guided 100+ student project showcases in coding, robotics and IoT.</li>
         <li>Used AI tools to support teaching and student projects.</li>
@@ -220,11 +269,23 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
 </section>
 
 <section id="education">
-  <h2 class="rv">Education</h2>
-  <div class="edu">
-    <div class="ed big rv"><small>2020–24</small><b>8.6 CGPA</b>Bachelor of Technology<br><small>University of Engineering and Management</small></div>
-    <div class="ed rv"><small>2019–20</small><b>69.33%</b>Class XII (CBSE)<br><small>DAV Public School</small></div>
-    <div class="ed rv"><small>2017–18</small><b>73.4%</b>Class X (CBSE)<br><small>P.P.M School</small></div>
+  <h2 class="rv">Education &amp; Training</h2>
+  <div class="ledger">
+    <div class="row rv hl"><div class="yr">2020<i></i>2024</div><div class="mid"><h3>B.Tech, Computer Science</h3><span>University of Engineering &amp; Management (UEM)</span></div><div class="res"><svg viewBox="0 0 80 80" width="84" height="84"><circle cx="40" cy="40" r="34" class="trk"/><circle cx="40" cy="40" r="34" class="arc" style="--p:.86"/></svg><b>8.6<small>CGPA</small></b></div></div>
+    <div class="row rv"><div class="yr">2025</div><div class="mid"><h3>React JS</h3><span>Jspiders · Training and Development Center · Feb – Jul 2025</span></div><div class="res"><em>Front-end</em></div></div>
+    <div class="row rv"><div class="yr">2024<i></i>25</div><div class="mid"><h3>Python Full Stack Development</h3><span>PySpider · Python Training Institute · Aug 2024 – Jan 2025</span></div><div class="res"><em>Full stack</em></div></div>
+    <div class="row rv"><div class="yr">2022<i></i>24</div><div class="mid"><h3>Nano Degree</h3><span>PrepInsta · Aug 2022 – Aug 2024</span></div><div class="res"><em>Grade A</em></div></div>
+    <div class="row rv"><div class="yr">2020</div><div class="mid"><h3>Class XII, Science (CBSE)</h3><span>DAV Public School · 2019–20</span></div><div class="res"><b>69.33<small>%</small></b></div></div>
+    <div class="row rv"><div class="yr">2018</div><div class="mid"><h3>Class X (CBSE)</h3><span>P.P.M School · 2017–18</span></div><div class="res"><b>73.4<small>%</small></b></div></div>
+  </div>
+</section>
+
+<section id="languages">
+  <h2 class="rv">Languages</h2>
+  <div class="langs rv">
+    <div class="lg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="trk"/><circle cx="60" cy="60" r="52" class="arc" style="--p:1"/></svg><span class="glyph">বাং</span><b>Bengali</b><small>Full professional</small></div>
+    <div class="lg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="trk"/><circle cx="60" cy="60" r="52" class="arc" style="--p:1"/></svg><span class="glyph">En</span><b>English</b><small>Full professional</small></div>
+    <div class="lg"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="trk"/><circle cx="60" cy="60" r="52" class="arc" style="--p:1"/></svg><span class="glyph">हि</span><b>Hindi</b><small>Full professional</small></div>
   </div>
 </section>
 
