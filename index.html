@@ -116,24 +116,9 @@ ul.bring{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1
 ul.bring li{padding:12px 14px 12px 38px;border:1px solid var(--line);border-radius:12px;background:rgba(13,19,37,.7);position:relative;font-size:14.5px;color:#c5cce2}
 ul.bring li::before{content:"";position:absolute;left:14px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:3px;background:linear-gradient(135deg,var(--ice),var(--violet));box-shadow:0 0 10px var(--violet);transform:rotate(45deg)}
 /* education ledger */
-.ledger{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:170px 1fr auto;gap:28px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .3s,background .3s}
-.row::before{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:linear-gradient(90deg,var(--ice),var(--violet));transition:width .6s}
-.row:hover{padding-left:22px;background:linear-gradient(90deg,rgba(139,124,255,.1),transparent)}
-.row:hover::before{width:100%}
-.yr{font-family:Unbounded;font-weight:800;font-size:20px;color:transparent;-webkit-text-stroke:1px var(--ice);white-space:nowrap;transition:color .3s}
-.yr i{display:inline-block;width:14px;height:1px;background:var(--ice);margin:0 4px 6px;vertical-align:middle}
-.row:hover .yr{color:var(--ice)}
-.mid h3{font-size:18px;margin-bottom:4px}
-.mid span{color:var(--mute);font-size:14px}
-.res{text-align:right;display:flex;align-items:center;gap:14px;justify-content:flex-end}
-.res b{font-family:Unbounded;font-size:26px;color:var(--amber)}.res b small{font-size:12px;color:var(--mute);margin-left:4px}
-.res em{font-style:normal;font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid rgba(255,184,107,.4);color:var(--amber)}
-.hl .res svg{position:absolute;right:8px;opacity:.9}.hl .res b{position:relative;width:84px;text-align:center;line-height:1.1}.hl .res b small{display:block;margin:0}
 .trk{fill:none;stroke:var(--line);stroke-width:5}
 .arc{fill:none;stroke:url(#g);stroke:var(--ice);stroke-width:5;stroke-linecap:round;stroke-dasharray:var(--c,214);stroke-dashoffset:var(--c,214);transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1) .3s}
 .on .arc,.on.arc{stroke-dashoffset:calc(var(--c,214) * (1 - var(--p)))}
-.row .arc{--c:214}
 /* languages */
 .langs{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,6vw,80px)}
 .lg{position:relative;width:170px;text-align:center}
@@ -144,7 +129,51 @@ ul.bring li::before{content:"";position:absolute;left:14px;top:50%;width:10px;he
 .lg b{display:block;margin-top:14px;font-family:Unbounded;font-size:16px}
 .lg small{color:var(--mute)}
 .lg:hover svg{animation:spin 6s linear infinite}
-@media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.res{justify-content:flex-start}.hl .res{min-height:84px}.hl .res svg{right:auto;left:0}.hl .res b{margin-left:0;width:84px}ul.bring{grid-template-columns:1fr}}
+@media(max-width:820px){ul.bring{grid-template-columns:1fr}.jpanel{grid-template-columns:1fr;padding:24px}.nodes b{font-size:11px}.nodes small{display:none}.ys{display:none}.mbox{padding:24px}.steps{padding-left:0}}
+/* education journey */
+.journey{position:relative}
+.jline{position:absolute;left:calc(100%/(var(--n,6)*2));right:calc(100%/(var(--n,6)*2));top:19px;height:2px;background:var(--line)}
+.jline i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ice),var(--violet));box-shadow:0 0 10px var(--ice);transition:width .6s}
+.nodes{display:grid;grid-template-columns:repeat(var(--n,6),1fr);position:relative}
+.nodes button{background:none;border:0;color:var(--mute);font:inherit;cursor:pointer;text-align:center;padding:0 2px 6px}
+.dot{display:block;width:16px;height:16px;border-radius:50%;margin:11px auto 12px;background:var(--void);border:3px solid var(--line);transition:all .3s}
+.nodes button.done .dot{border-color:var(--violet)}
+.nodes button.act .dot{border-color:var(--ice);transform:scale(1.3);box-shadow:0 0 0 6px rgba(143,227,255,.15),0 0 18px var(--ice)}
+.nodes b{display:block;font-family:Unbounded;font-size:14px;transition:color .3s}
+.nodes small{font-size:12px}
+.nodes button:hover b,.nodes button.act b{color:var(--ice)}
+.jpanel{margin-top:24px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;padding:36px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(150deg,rgba(139,124,255,.16),var(--panel) 55%);overflow:hidden;min-height:230px}
+.jpanel.in>*{animation:rise .55s both}.jpanel.in>*:nth-child(2){animation-delay:.1s}
+.kind{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.jpanel h3{font-size:clamp(20px,3vw,28px);margin:8px 0 6px}
+.jpanel .o{color:#c5cce2;margin-bottom:4px}.jpanel .pd{color:var(--mute);font-size:14px;margin-bottom:16px}
+.big{font-family:Unbounded;font-weight:800;font-size:clamp(46px,8vw,86px);line-height:1;text-align:center;background:linear-gradient(120deg,var(--ice),var(--violet),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.bl{text-align:center;color:var(--mute);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+@keyframes stepin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+/* project modal */
+.proj{cursor:pointer}
+.more{display:inline-block;margin-top:18px;color:var(--ice);font-weight:700;font-size:14px;transition:letter-spacing .25s}
+.proj:hover .more{letter-spacing:.06em}
+body.lock{overflow:hidden}
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(3,5,12,.82);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
+.modal.open{opacity:1;pointer-events:auto}
+.mbox{position:relative;width:min(880px,100%);max-height:88vh;overflow:auto;padding:40px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(160deg,#141c38,var(--panel) 45%);box-shadow:0 30px 120px rgba(0,0,0,.6),0 0 80px rgba(139,124,255,.18);transform:translateY(34px) scale(.96);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.modal.open .mbox{transform:none}
+.mx{position:absolute;right:16px;top:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--void);color:var(--text);font-size:22px;cursor:pointer;transition:transform .3s,border-color .3s}
+.mx:hover{transform:rotate(90deg);border-color:var(--ice)}
+.mtag{color:var(--amber);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.mbox h3{font-size:clamp(22px,3.4vw,32px);margin:10px 40px 14px 0}
+.mlead{color:#c5cce2;font-size:17px;margin:0 0 8px}
+.mh{font-family:Unbounded;font-size:14px;color:var(--ice);margin:30px 0 14px}
+.steps{list-style:none;margin:0;padding:0 0 0 6px;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--ice),var(--violet),transparent)}
+.steps li{position:relative;padding:0 0 18px 56px;counter-increment:s;opacity:0}
+.modal.open .steps li{animation:stepin .5s both}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:Unbounded;font-size:13px;background:var(--void);border:2px solid var(--ice);box-shadow:0 0 14px rgba(143,227,255,.4)}
+.steps b{display:block;color:var(--text)}.steps span{color:var(--mute);font-size:14.5px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;list-style:none;margin:0;padding:0}
+.feat li{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(6,9,20,.5);font-size:14.5px;color:#c5cce2}
 /* contact */
 .contact{text-align:center}
 .contact h2::after{margin-inline:auto}
@@ -162,7 +191,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
 @keyframes blink{50%{opacity:0}}
 @keyframes pulse{50%{box-shadow:0 0 0 10px rgba(143,227,255,0)}0%{box-shadow:0 0 0 0 rgba(143,227,255,.6)}}
 @media(max-width:820px){.hero,.about{grid-template-columns:1fr}.photo-wrap{order:-1;margin:50px auto}nav div a:nth-child(n+4){display:none}section{padding:70px 5vw}.hero{min-height:0}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.steps li{opacity:1}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -263,20 +292,17 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
 <section id="projects">
   <h2 class="rv">Projects</h2>
   <div class="projs">
-    <article class="proj rv"><h3>Driver Drowsiness Detection System</h3><p>A computer vision and machine learning system that analyses facial features, eye blinking and head movement to detect driver fatigue and trigger a warning.</p><div class="chips"><span>Python</span><span>OpenCV</span><span>Dlib</span><span>NumPy</span><span>Pandas</span></div></article>
-    <article class="proj rv"><h3>Weather Forecasting Website</h3><p>A responsive website that shows real-time weather and a 3-day forecast using the visitor’s geolocation.</p><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>OpenWeather API</span></div></article>
+    <article class="proj rv" data-p="0" tabindex="0" role="button" aria-haspopup="dialog"><h3>Driver Drowsiness Detection System</h3><p>A computer vision and machine learning system that analyses facial features, eye blinking and head movement to detect driver fatigue and trigger a warning.</p><div class="chips"><span>Python</span><span>OpenCV</span><span>Dlib</span><span>NumPy</span><span>Pandas</span></div><span class="more">View full project →</span></article>
+    <article class="proj rv" data-p="1" tabindex="0" role="button" aria-haspopup="dialog"><h3>Weather Forecasting Website</h3><p>A responsive website that shows real-time weather and a 3-day forecast using the visitor’s geolocation.</p><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>OpenWeather API</span></div><span class="more">View full project →</span></article>
   </div>
 </section>
 
 <section id="education">
   <h2 class="rv">Education &amp; Training</h2>
-  <div class="ledger">
-    <div class="row rv hl"><div class="yr">2020<i></i>2024</div><div class="mid"><h3>B.Tech, Computer Science</h3><span>University of Engineering &amp; Management (UEM)</span></div><div class="res"><svg viewBox="0 0 80 80" width="84" height="84"><circle cx="40" cy="40" r="34" class="trk"/><circle cx="40" cy="40" r="34" class="arc" style="--p:.86"/></svg><b>8.6<small>CGPA</small></b></div></div>
-    <div class="row rv"><div class="yr">2025</div><div class="mid"><h3>React JS</h3><span>Jspiders · Training and Development Center · Feb – Jul 2025</span></div><div class="res"><em>Front-end</em></div></div>
-    <div class="row rv"><div class="yr">2024<i></i>25</div><div class="mid"><h3>Python Full Stack Development</h3><span>PySpider · Python Training Institute · Aug 2024 – Jan 2025</span></div><div class="res"><em>Full stack</em></div></div>
-    <div class="row rv"><div class="yr">2022<i></i>24</div><div class="mid"><h3>Nano Degree</h3><span>PrepInsta · Aug 2022 – Aug 2024</span></div><div class="res"><em>Grade A</em></div></div>
-    <div class="row rv"><div class="yr">2020</div><div class="mid"><h3>Class XII, Science (CBSE)</h3><span>DAV Public School · 2019–20</span></div><div class="res"><b>69.33<small>%</small></b></div></div>
-    <div class="row rv"><div class="yr">2018</div><div class="mid"><h3>Class X (CBSE)</h3><span>P.P.M School · 2017–18</span></div><div class="res"><b>73.4<small>%</small></b></div></div>
+  <div class="journey rv">
+    <div class="jline"><i id="jfill"></i></div>
+    <div class="nodes" id="nodes" role="tablist" aria-label="Education timeline"></div>
+    <div class="jpanel" id="jpanel" role="tabpanel" aria-live="polite"></div>
   </div>
 </section>
 
@@ -301,6 +327,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 5vw 50px;
 </main>
 <footer>Sahil Sengra · Kolkata, West Bengal, India</footer>
 
+<div class="modal" id="modal" aria-hidden="true"><div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mt"><button class="mx" id="mx" aria-label="Close project details">×</button><div id="mbody"></div></div></div>
 <script>
 // photo upload (remembered in this browser only)
 var frame=document.getElementById('frame'),pic=document.getElementById('pic'),file=document.getElementById('file');
@@ -351,6 +378,45 @@ if(!reduce&&matchMedia('(hover:hover)').matches){
   b.addEventListener('pointerleave',function(){b.style.transform=''});
  });
 }
+
+// education journey
+var E=[
+{y:'2018',a:'2017',k:'School',t:'Class X (CBSE)',o:'P.P.M School',p:'2017 – 2018',n:'73.4%',l:'Score',s:[]},
+{y:'2020',a:'2019',k:'School',t:'Class XII, Science (CBSE)',o:'DAV Public School',p:'2019 – 2020',n:'69.33%',l:'Score',s:[]},
+{y:'2024',a:'2020',k:'Degree',t:'B.Tech, Computer Science',o:'University of Engineering & Management (UEM)',p:'Jul 2020 – Jul 2024',n:'8.6',l:'CGPA',s:['SQL','Web Development']},
+{y:'2024',a:'2022',k:'Certification',t:'Nano Degree',o:'PrepInsta',p:'Aug 2022 – Aug 2024',n:'A',l:'Grade',s:['User Experience (UX)','SQL']},
+{y:'2025',a:'2024',k:'Training',t:'Full Stack Training',o:'PySpider · Python Full Stack Development<br>Jspiders · React JS',p:'2024 – 2025',n:'2',l:'Courses',s:['Python','React.js','SQL','Web Development','User Experience (UX)']}];
+document.querySelector('.journey').style.setProperty('--n',E.length);
+var nd=document.getElementById('nodes'),jp=document.getElementById('jpanel'),jf=document.getElementById('jfill');
+E.forEach(function(e,i){var b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML='<span class="dot"></span><b>'+(e.a?'<span class="ys">'+e.a+'–</span>':'')+e.y+'</b><small>'+e.k+'</small>';b.addEventListener('click',function(){pick(i)});nd.appendChild(b)});
+function pick(i){var e=E[i];[].forEach.call(nd.children,function(b,j){b.className=j===i?'act':(j<i?'done':'');b.setAttribute('aria-selected',j===i)});
+jf.style.width=(i/(E.length-1)*100)+'%';
+jp.className='jpanel';void jp.offsetWidth;jp.className='jpanel in';
+jp.innerHTML='<div><div class="kind">'+e.k+'</div><h3>'+e.t+'</h3><div class="o">'+e.o+'</div><div class="pd">'+e.p+'</div>'+(e.s.length?'<div class="chips">'+e.s.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>':'')+'</div><div><div class="big">'+e.n+'</div><div class="bl">'+e.l+'</div></div>'}
+pick(2);
+
+// project details modal
+var PR=[
+{tag:'Computer Vision · Machine Learning',t:'Driver Drowsiness Detection System',lead:'A system that watches a driver’s face through a camera and raises a warning when the signs of fatigue appear, so a tired driver is alerted before it becomes dangerous.',
+prob:'Driver fatigue is a common cause of road accidents, and a tired driver often does not notice it in time. The idea was to build a system that can notice for them.',
+steps:[['Capture the video','The camera feed is read frame by frame with OpenCV.'],['Find the face','Each frame is checked for the driver’s face, so the rest of the analysis focuses on the right region.'],['Map facial landmarks','Dlib marks key points around the eyes and face, which turns a picture into numbers that can be measured.'],['Analyse the signals','Eye blinking and head movement are tracked across frames, with NumPy and Pandas handling the calculations and data.'],['Decide','If the signals point to fatigue, such as long or frequent eye closure or a drooping head, the driver is flagged as drowsy.'],['Warn the driver','A warning is triggered so the driver can react.']],
+feat:['Analyses facial features in real time','Tracks eye blinking patterns','Monitors head movement','Triggers a warning when fatigue is detected'],
+stack:['Python','OpenCV','Dlib','NumPy','Pandas'],
+demo:'Computer vision, a machine learning style pipeline, working with live video, and turning raw measurements into a clear decision.'},
+{tag:'Web Development · API Integration',t:'Weather Forecasting Website',lead:'A responsive website that finds where the visitor is and shows the real-time weather and a 3-day forecast, without having to search for a city.',
+prob:'Checking the weather usually means typing a city name and scrolling through cluttered pages. This site removes that step by using the visitor’s own location.',
+steps:[['Find the location','The browser’s geolocation feature asks permission and returns the visitor’s coordinates.'],['Request the data','JavaScript sends the coordinates to the OpenWeather API.'],['Read the response','Current conditions and forecast values are extracted from the data the API returns.'],['Prepare 3 days','The forecast is organised into a simple 3-day outlook.'],['Show it clearly','The page updates with today’s temperature and conditions, followed by the next three days.'],['Fit every screen','A responsive layout keeps it readable on phones, tablets and desktops.']],
+feat:['Real-time weather for the visitor’s location','3-day forecast','Automatic location with geolocation','Responsive on all screen sizes'],
+stack:['HTML','CSS','JavaScript','OpenWeather API'],
+demo:'Working with a REST API, asynchronous JavaScript, updating the page from live data, and responsive design.'}];
+var md=document.getElementById('modal'),mb=document.getElementById('mbody'),mx=document.getElementById('mx'),last=null;
+function openP(i){var d=PR[i];last=document.activeElement;
+mb.innerHTML='<div class="mtag">'+d.tag+'</div><h3 id="mt">'+d.t+'</h3><p class="mlead">'+d.lead+'</p><div class="mh">THE PROBLEM</div><p style="margin:0;color:#c5cce2">'+d.prob+'</p><div class="mh">HOW IT WORKS</div><ol class="steps">'+d.steps.map(function(x,k){return '<li style="animation-delay:'+(.15+k*.12)+'s"><b>'+x[0]+'</b><span>'+x[1]+'</span></li>'}).join('')+'</ol><div class="mh">KEY FEATURES</div><ul class="feat">'+d.feat.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><div class="mh">TECH STACK</div><div class="chips">'+d.stack.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div><div class="mh">WHAT IT SHOWS</div><p style="margin:0;color:#c5cce2">'+d.demo+'</p>';
+md.classList.add('open');md.setAttribute('aria-hidden','false');document.body.classList.add('lock');document.querySelector('.mbox').scrollTop=0;mx.focus()}
+function closeP(){md.classList.remove('open');md.setAttribute('aria-hidden','true');document.body.classList.remove('lock');if(last)last.focus()}
+document.querySelectorAll('.proj').forEach(function(c){c.addEventListener('click',function(){openP(+c.dataset.p)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openP(+c.dataset.p)}})});
+mx.addEventListener('click',closeP);md.addEventListener('click',function(e){if(e.target===md)closeP()});
+addEventListener('keydown',function(e){if(e.key==='Escape'&&md.classList.contains('open'))closeP()});
 </script>
 </body>
 </html>
